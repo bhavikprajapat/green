@@ -1,0 +1,519 @@
+.activity-page{
+    background:#f6fbf3;
+    min-height:100vh;
+}
+
+/* Left Card */
+
+.activity-card{
+    background:#fff;
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    border:1px solid #edf1ea;
+}
+
+.activity-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.activity-header h3{
+    color:#0d7a36;
+    font-weight:700;
+    font-size:28px;
+}
+
+.activity-header p{
+    color:#777;
+    margin-top:5px;
+}
+
+.leaf-icon{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#eff9ef;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+}
+
+/* Labels */
+
+.activity-card label{
+    font-weight:600;
+    margin-bottom:8px;
+    display:block;
+    color:#555;
+}
+
+/* Inputs */
+
+.activity-card input,
+.activity-card textarea,
+.activity-card select{
+    width:100%;
+    border:1px solid #d8e2d2;
+    border-radius:15px;
+    padding:14px 18px;
+    outline:none;
+    transition:.3s;
+    background:#fff;
+}
+
+.activity-card input:focus,
+.activity-card textarea:focus,
+.activity-card select:focus{
+    border-color:#11853f;
+    box-shadow:0 0 0 4px rgba(17,133,63,.1);
+}
+
+.activity-card textarea{
+    resize:none;
+}
+
+/* Input Icon */
+
+.input-icon{
+    position:relative;
+}
+
+.input-icon svg{
+    position:absolute;
+    right:18px;
+    top:18px;
+    color:#11853f;
+}
+
+/* Map */
+
+.map-box{
+    position:relative;
+    height:260px;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid #e4e4e4;
+    background:#f8f8f8;
+}
+
+.map-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Location Button */
+
+.location-btn{
+    position:absolute;
+    right:20px;
+    bottom:20px;
+    border:none;
+    background:#fff;
+    color:#0d7a36;
+    padding:12px 22px;
+    border-radius:40px;
+    font-weight:600;
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.location-btn:hover{
+    background:#0d7a36;
+    color:#fff;
+}
+
+/* Upload */
+
+.upload-box{
+    height:180px;
+    border:2px dashed #bfd8bc;
+    border-radius:20px;
+    background:#f7fcf4;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.upload-box:hover{
+    background:#edf9eb;
+}
+
+.upload-icon{
+    font-size:45px;
+    color:#0d7a36;
+    margin-bottom:15px;
+}
+
+.upload-box h5{
+    font-size:18px;
+    font-weight:600;
+    color:#333;
+}
+
+.upload-box p{
+    color:#777;
+    margin-top:8px;
+    font-size:14px;
+}
+
+/* Buttons */
+
+.btn-group-custom{
+    display:flex;
+    gap:18px;
+    margin-top:30px;
+}
+
+.save-btn{
+    background:#0d7a36;
+    color:#fff;
+    border:none;
+    border-radius:40px;
+    padding:14px 40px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.save-btn:hover{
+    background:#095e2a;
+}
+
+.cancel-btn{
+    background:#fff;
+    color:#0d7a36;
+    border:2px solid #0d7a36;
+    border-radius:40px;
+    padding:14px 40px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.cancel-btn:hover{
+    background:#0d7a36;
+    color:#fff;
+}
+
+/* Timeline */
+
+.timeline-card{
+    background:#fff;
+    border-radius:24px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    border:1px solid #edf1ea;
+}
+
+.timeline-header{
+    margin-bottom:25px;
+}
+
+.timeline-header h5{
+    color:#0d7a36;
+    font-weight:700;
+}
+
+/* ========================= */
+/* Timeline */
+/* ========================= */
+
+.timeline-item{
+    position:relative;
+    padding-left:32px;
+    margin-bottom:35px;
+}
+
+.timeline-item:last-child{
+    margin-bottom:20px;
+}
+
+/* Vertical Line */
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:9px;
+    top:0;
+    bottom:-35px;
+    width:2px;
+    background:#d7e7d7;
+}
+
+.timeline-item:last-child::before{
+    display:none;
+}
+
+/* Circle */
+
+.timeline-dot{
+    position:absolute;
+    left:0;
+    top:5px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    border:3px solid #11853f;
+    background:#fff;
+}
+
+.timeline-dot.active{
+    background:#11853f;
+}
+
+/* Time */
+
+.time{
+    color:#777;
+    display:block;
+    margin-bottom:6px;
+    font-size:13px;
+}
+
+/* Badge */
+
+.status-badge{
+    display:inline-block;
+    padding:4px 12px;
+    background:#dff7df;
+    color:#11853f;
+    border-radius:30px;
+    font-size:12px;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+/* Heading */
+
+.timeline-content h6{
+    margin:8px 0;
+    font-size:18px;
+    font-weight:700;
+    color:#222;
+}
+
+/* Location */
+
+.timeline-content p{
+    color:#666;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+/* Images */
+
+.timeline-content img{
+    width:100%;
+    height:130px;
+    object-fit:cover;
+    border-radius:14px;
+    transition:.35s;
+}
+
+.timeline-content img:hover{
+    transform:scale(1.03);
+}
+
+/* View Button */
+
+.view-all-btn{
+    width:100%;
+    padding:14px;
+    background:#fff;
+    border:2px solid #11853f;
+    color:#11853f;
+    border-radius:40px;
+    font-weight:700;
+    transition:.35s;
+}
+
+.view-all-btn:hover{
+    background:#11853f;
+    color:#fff;
+}
+
+/* ========================= */
+/* Hover Effects */
+/* ========================= */
+
+.activity-card input:hover,
+.activity-card textarea:hover,
+.activity-card select:hover{
+    border-color:#11853f;
+}
+
+.activity-card{
+    transition:.35s;
+}
+
+.activity-card:hover{
+    transform:translateY(-2px);
+}
+
+.timeline-card{
+    transition:.35s;
+}
+
+.timeline-card:hover{
+    transform:translateY(-2px);
+}
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media(max-width:1200px){
+
+.activity-header h3{
+    font-size:24px;
+}
+
+.map-box{
+    height:220px;
+}
+
+}
+
+/* Tablet */
+
+@media(max-width:991px){
+
+.activity-card{
+    padding:22px;
+}
+
+.timeline-card{
+    margin-top:25px;
+}
+
+.btn-group-custom{
+    flex-direction:column;
+}
+
+.save-btn,
+.cancel-btn{
+    width:100%;
+}
+
+.map-box{
+    height:220px;
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:767px){
+
+.activity-page{
+    padding:10px;
+}
+
+.activity-card{
+    padding:18px;
+    border-radius:18px;
+}
+
+.timeline-card{
+    border-radius:18px;
+    padding:18px;
+}
+
+.activity-header{
+    flex-direction:column;
+    text-align:center;
+    gap:15px;
+}
+
+.activity-header h3{
+    font-size:22px;
+}
+
+.activity-header p{
+    font-size:14px;
+}
+
+.input-icon svg{
+    right:15px;
+}
+
+.map-box{
+    height:180px;
+}
+
+.location-btn{
+    padding:10px 15px;
+    font-size:13px;
+}
+
+.upload-box{
+    height:150px;
+}
+
+.upload-icon{
+    font-size:36px;
+}
+
+.upload-box h5{
+    font-size:16px;
+}
+
+.timeline-content img{
+    height:110px;
+}
+
+.timeline-content h6{
+    font-size:16px;
+}
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+.activity-card{
+    padding:15px;
+}
+
+.timeline-card{
+    padding:15px;
+}
+
+.activity-header h3{
+    font-size:20px;
+}
+
+.activity-header p{
+    font-size:13px;
+}
+
+.map-box{
+    height:160px;
+}
+
+.btn-group-custom{
+    gap:10px;
+}
+
+.save-btn,
+.cancel-btn{
+    padding:12px;
+}
+
+.timeline-item{
+    padding-left:28px;
+}
+
+.timeline-dot{
+    width:15px;
+    height:15px;
+}
+
+}

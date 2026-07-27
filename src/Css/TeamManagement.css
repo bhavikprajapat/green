@@ -1,0 +1,333 @@
+/* ===========================
+   PAGE
+=========================== */
+
+.page-title{
+    font-size:28px;
+    font-weight:700;
+    color:#173b24;
+}
+
+.filter-card{
+    background:#fff;
+    padding:20px;
+    border-radius:18px;
+    border:1px solid #dbe9db;
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.add-btn{
+    background:#0b7a32;
+    color:#fff;
+    border-radius:50px;
+    padding:12px 24px;
+    font-weight:600;
+    border:none;
+}
+
+.add-btn:hover{
+    background:#066125;
+    color:#fff;
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.search-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    border:1px solid #d9e6d9;
+    border-radius:50px;
+    padding:12px 18px;
+    background:#fff;
+}
+
+.search-box input{
+    border:none;
+    outline:none;
+    width:100%;
+    background:transparent;
+}
+
+.search-box svg{
+    color:#7b8d7b;
+}
+
+/* ===========================
+   TEAM CARD
+=========================== */
+
+.team-summary-card{
+    background:#fff;
+    border-radius:18px;
+    border:1px solid #dbe9db;
+    padding:20px;
+    transition:.3s;
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.team-summary-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(0,0,0,.12);
+}
+
+.location-icon{
+    width:40px;
+    height:40px;
+    background:#e9f8eb;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+}
+
+.status-badge{
+    background:#dcffe3;
+    color:#0b7a32;
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+.card-row{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 0;
+    border-bottom:1px solid #edf3ed;
+}
+
+.card-row:last-child{
+    border:none;
+}
+
+.card-row span{
+    color:#6b6b6b;
+}
+
+.card-row strong{
+    color:#173b24;
+}
+
+/* ===========================
+   PERFORMANCE CARD
+=========================== */
+
+.performance-card{
+    background:#fff;
+    border-radius:18px;
+    border:1px solid #dbe9db;
+    padding:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.performance-card table{
+    margin-bottom:0;
+}
+
+.performance-card th{
+    font-weight:600;
+    color:#6f6f6f;
+    border:none;
+}
+
+.performance-card td{
+    vertical-align:middle;
+    border-top:1px solid #edf3ed;
+}
+
+.performance-card tbody tr{
+    transition:.3s;
+}
+
+.performance-card tbody tr:hover{
+    background:#f5fff7;
+}
+
+.progress{
+    height:8px;
+    border-radius:30px;
+    background:#e7ece7;
+}
+
+.progress-bar{
+    border-radius:30px;
+}
+
+/* ===========================
+   RIGHT FORM
+=========================== */
+
+.activity-form{
+    background:#fff;
+    border-radius:18px;
+    border:1px solid #dbe9db;
+    padding:22px;
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+    position:sticky;
+    top:90px;
+}
+
+.activity-form label{
+    font-size:14px;
+    margin-bottom:6px;
+    font-weight:500;
+}
+
+.activity-form .form-control,
+.activity-form .form-select{
+    border-radius:10px;
+    border:1px solid #d5dfd5;
+    height:45px;
+}
+
+.activity-form textarea.form-control{
+    height:auto;
+}
+
+/* ===========================
+   UPLOAD BOX
+=========================== */
+
+.upload-box{
+    border:2px dashed #cfd8cf;
+    border-radius:14px;
+    padding:35px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+    background:#f9fff9;
+}
+
+.upload-box:hover{
+    border-color:#0b7a32;
+    background:#f1fff3;
+}
+
+.upload-box p{
+    margin:10px 0 0;
+    color:#666;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.table{
+    background:#fff;
+}
+
+.table td,
+.table th{
+    padding:16px;
+}
+
+/* ===========================
+   ACTION ICONS
+=========================== */
+
+.action-icons{
+    display:flex;
+    gap:15px;
+}
+
+.action-icon{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.action-icon:hover{
+    transform:scale(1.15);
+}
+
+.view-icon{
+    color:#0b7a32;
+}
+
+.edit-icon{
+    color:#0b7a32;
+}
+
+.delete-icon{
+    color:#dc3545;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.activity-form{
+    position:static;
+    margin-top:20px;
+}
+
+.page-title{
+    font-size:24px;
+}
+
+.add-btn{
+    margin-top:15px;
+}
+
+}
+
+@media(max-width:768px){
+
+.filter-card{
+    padding:15px;
+}
+
+.team-summary-card{
+    padding:16px;
+}
+
+.card-row{
+    font-size:14px;
+}
+
+.performance-card{
+    overflow-x:auto;
+}
+
+.performance-card table{
+    min-width:650px;
+}
+
+.search-box{
+    margin-bottom:10px;
+}
+
+}
+
+@media(max-width:576px){
+
+.page-title{
+    font-size:22px;
+}
+
+.team-summary-card h5{
+    font-size:18px;
+}
+
+.activity-form{
+    padding:15px;
+}
+
+.add-btn{
+    width:100%;
+}
+
+.search-box{
+    padding:10px 14px;
+}
+
+}
