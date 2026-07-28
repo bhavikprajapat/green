@@ -9,6 +9,7 @@ import Login from './pages/auth/Login';
 import TeamManagment from './pages/teams/TeamManagment';
 import Dailywork from './pages/teams/Dailywork';
 import Landingpage from './pages/mainpage/Landingpage';
+import About from './pages/mainpage/About';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
         <Route path='/dashboard' element={<Layout/>} >
        <Route path='team' element={<TeamManagment/>} />
        <Route path='dailywork' element={<Dailywork/>} />
-        </Route>
+       </Route>
+       <Route path='/home' element={<Landingpage/>}/>
+       <Route path='/about' element={<About/>} />
       </Routes>
     
     </div>

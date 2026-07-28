@@ -5,16 +5,16 @@ const Aboutmission = () => {
     return (
         <div >
             <div style={{ background: "#F9FAFB" }} className='mb-5' >
-                <div className='container d-flex align-items-center py-4'>
-                    <div className='col-6 px-5'>
-                        <h1 style={{fontSize:"40px",fontWeight:"800"}}>About Our Mission</h1>
-                        <p className='fw-bold'>Hope Foundation is dedicated to empowering communities through sustainable development initiatives, educational programs, and humanitarian support. Since our founding, we've been committed to creating lasting positive change.
-
-                            Our team of dedicated volunteers and partners work tirelessly to address critical needs in education, healthcare, environmental sustainability, and social welfare.</p>
+                <div className='container row m-auto align-items-center py-4'>
+                    <div className='col-lg-6 col-12 px-lg-5'>
+                        <h1 className='py-2 mission_heading'>ગ્રીન આર્મી વિશે</h1>
+                        <p className=' lh-lg'>વધુ હરિયાળું અને ટકાઉ ભારત બનાવવાના અમારા અભિયાનના ભાગરૂપે, અમે દરરોજ વૃક્ષારોપણની પ્રવૃત્તિઓ હાથ ધરીએ છીએ જે પર્યાવરણમાં યોગદાન આપે છે અને આબોહવા પરિવર્તન સામે લડવામાં મદદ કરે છે. આ વીડિયોમાં, તમે અમારા સમર્પિત સ્વયંસેવકોને વૃક્ષો વાવવા, સમુદાયોને જાગૃત કરવા અને દરેકને અમારી સાથે જોડાવા માટે પ્રોત્સાહિત કરવા માટે સાથે મળીને કામ કરતા જોશો.</p>
+                <p>
+                        સાથે મળીને, આપણે પરિવર્તન લાવી શકીએ છીએ! ચાલો ભારતને હરિયાળું બનાવીએ. 💚</p>
 
                     </div>
-                    <div className='col-6 p-3'>
-                    <img src={mission} className='w-75 rounded' alt="" />
+                    <div className='col-lg-6 col-12 p-3'>
+                        <img src={mission} className='custom_width' alt="" />
                     </div>
                 </div>
 
