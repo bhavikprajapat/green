@@ -14,16 +14,16 @@ const Header = () => {
           </div>
           <div className='d-flex'>
             <ul className='d-lg-flex d-md-flex d-sm-none d-none gap-lg-4 gap-md-3 align-items-center m-0'>
-              <li ><NavLink className="Navlink_set1" to="/home"> મુખ્યપૃષ્ઠ </NavLink></li>
-              <li ><NavLink className="Navlink_set1" to="/about"> વિશે </NavLink></li>
-              <li >કાર્યક્રમ</li>
-              <li >પ્રવૃત્તિઓ</li>
-              <li >સંપર્ક</li>
+              <li > <a href="#main">મુખ્યપૃષ્ઠ</a>  </li>
+              <li ><a href="#about">વિશે</a></li>
+              <li  > <a href="#upcoming">કાર્યક્રમ</a></li>
+              <li ><a href="#activity">પ્રવૃત્તિઓ</a></li>
+              <li ><a href="#contact">સંપર્ક</a></li>
               <button className=' btn_set'>
-                દાન
+               <NavLink to="/donation" style={{color:"white"}}>દાન</NavLink> 
               </button>
               <button className=' btn_set'>
-                સ્વયંસેવક
+               <NavLink to="/Volunteer" style={{color:"white"}}>સ્વયંસેવક</NavLink> 
               </button>
               <li ><NavLink className="Navlink_set1" to="/login"> વહીવટકર્તા </NavLink></li>
             </ul>
@@ -34,17 +34,17 @@ const Header = () => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item >મુખ્યપૃષ્ઠ</Dropdown.Item>
-                  <Dropdown.Item ><NavLink className="Navlink_set1" to="/about"> વિશે </NavLink></Dropdown.Item>
-                  <Dropdown.Item >કાર્યક્રમ</Dropdown.Item>
-                  <Dropdown.Item >વિશે</Dropdown.Item>
-                  <Dropdown.Item >કાર્યક્રમ</Dropdown.Item>
+                  <Dropdown.Item ><li > <a href="#main">મુખ્યપૃષ્ઠ</a>  </li></Dropdown.Item>
+                  <Dropdown.Item ><li ><a href="#about">વિશે</a></li></Dropdown.Item>
+                  <Dropdown.Item ><a href="#upcoming">કાર્યક્રમ</a></Dropdown.Item>
+                  <Dropdown.Item ><a href="#activity">પ્રવૃત્તિઓ</a></Dropdown.Item>
+                  <Dropdown.Item ><a href="#contact">સંપર્ક</a></Dropdown.Item>
                   <div>
                   <button className=' btn_set w-100  mb-2'>
-                    દાન
+                  <NavLink to="/donation" style={{color:"white"}}>દાન</NavLink> 
                   </button>
                   <button className=' btn_set w-100'>
-                    સ્વયંસેવક
+                   <NavLink to="/Volunteer" style={{color:"white"}}>સ્વયંસેવક</NavLink> 
                   </button>
                   </div>
                   

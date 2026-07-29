@@ -16,11 +16,24 @@
     font-weight: 600;
 }
 
+.hoverset{
+
+    transition:.35s;
+}
+
+.hoverset:hover{
+    transform:translateY(-8px);
+    shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
 li:hover{
 color:#009966;
 cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 .bg_set{
     background-image: url('../assets//images/bg_img.png');
@@ -31,13 +44,22 @@ cursor: pointer;
     height: 60vh;
 }
 
-.bg_overlay_set{
-   
-    background-color: rgb(18, 95, 65);
-    opacity: 0.3;
-    width: 100%;
+.bg_overlay_set {
+    background:
+        linear-gradient(rgba(18,95,65,.5), rgba(18,95,65,.5)),
+        url("../assets//images/bg_img.png");
+    background-size: cover;
+    background-position: center;
     height: 60vh;
-    
+}
+
+.bg_overlay_set1 {
+    background:
+        linear-gradient(rgba(18,95,65,.5), rgba(18,95,65,.5)),
+        url("../assets//images/volunteers.png");
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
 }
 
 .list_set{
@@ -167,6 +189,69 @@ cursor: pointer;
   transform: translateY(-4px);
 }
 
+a{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+
+/* why green army css */
+.why-section{
+    background:#ffffff;
+    position:relative;
+}
+
+.feature-card{
+    background:#fff;
+    border:1px solid #d8e7d8;
+    border-radius:20px;
+    padding:20px;
+    transition:.35s;
+    height:100%;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.feature-card h4{
+    font-size:23px;
+    margin-top: 20px;
+    font-weight:600;
+    margin-bottom:18px;
+    color:#16213e;
+}
+
+.feature-card p{
+    color:#555;
+    line-height:1.8;
+    margin:0;
+}
+
+/* why green army code finish */
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.feature-card{
+padding:25px;
+}
+
+.feature-card h4{
+font-size:22px;
+}
+
+.icon-box{
+width:55px;
+height:55px;
+font-size:28px;
+}
+
+}
+
 @media (max-width: 991px) {
   .container {
     text-align: center;
@@ -271,7 +356,7 @@ cursor: pointer;
     font-weight: 600;
 }
 .custom_width{
-    width: 75%;
+    width: 100%;
     height: 60vh;
     object-fit: cover;
     border-radius: 10px;

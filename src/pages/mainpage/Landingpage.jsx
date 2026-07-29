@@ -7,6 +7,7 @@ import Upcomingevent from './Upcomingevent'
 import Ouractivity from './Ouractivity'
 import Makediffrent from './Makediffrent'
 import Footer from './Footer'
+import WhyGreenArmy from './WhyGreenArmy'
 
 const Landingpage = () => {
   return (
@@ -14,6 +15,7 @@ const Landingpage = () => {
        <Header/> 
        <Sec1/>
        <Aboutmission/>
+       <WhyGreenArmy/>
        <Upcomingevent/>
        <Ouractivity/>
        <Makediffrent/>

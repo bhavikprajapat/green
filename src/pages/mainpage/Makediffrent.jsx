@@ -2,23 +2,46 @@ import React from 'react'
 
 const Makediffrent = () => {
   return (
-    <div style={{ background: "#009966",color:"white" }}>
-        <div className='container p-5'>
-            <div className='text-center'>
-            <h3 className='pb-2 fw-bold'>શું તમે પરિવર્તન લાવવા માટે તૈયાર છો?</h3>
-            <h5 className='fw-bold'>તમારો સહયોગ અમને સકારાત્મક પરિવર્તન લાવવાના અમારા અભિયાનને આગળ વધારવામાં મદદ કરે છે. દરેક યોગદાન મહત્વપૂર્ણ છે.</h5>
-            </div>
-            <div className='text-center pt-3'>
-                <button className='m-2 btn_set1 '>
-                દાન આપવું
-              </button>
-              <button  className='m-2 btn_set1 '>
-                સ્વયંસેવક બનો
-              </button>
-            </div>
-            
+    <div className="cta-section py-5">
+      <div className="container">
+
+        <div className="cta-box text-center" data-aos="zoom-in-up"
+          data-aos-duration="1000">
+
+          <span className="cta-badge">
+            🌿 ગ્રીન આર્મી ચેરીટેબલ ટ્રસ્ટ
+          </span>
+
+          <h3 className="fw-bold mt-3">
+            શું તમે પરિવર્તન લાવવા માટે તૈયાર છો?
+          </h3>
+
+          <p className="mt-3">
+            તમારો સહયોગ અમને હરિયાળું અને સ્વચ્છ ભારત બનાવવાના
+            અમારા અભિયાનને વધુ મજબૂત બનાવે છે.
+            દરેક નાનું યોગદાન પણ પર્યાવરણ માટે મોટો ફેરફાર લાવી શકે છે.
+          </p>
+
+          <div className="mt-4">
+
+            <button className="cta-btn me-3"
+              data-aos="fade-right"
+              data-aos-delay="300">
+              🌱 દાન આપો
+            </button>
+
+            <button className="cta-btn-outline" data-aos="fade-left"
+              data-aos-delay="500">
+              🤝 સ્વયંસેવક બનો
+            </button>
+
+          </div>
+
         </div>
+
+      </div>
     </div>
+
   )
 }
 
