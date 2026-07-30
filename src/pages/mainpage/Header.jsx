@@ -3,8 +3,13 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { FiMenu } from "react-icons/fi";
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo/logo original.jpg'
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from '../../LanguageSwitcher';
+
+
 
 const Header = () => {
+  const { t , i18n } = useTranslation();
   return (
     <div className='landing_bg shadow position-sticky top-0 left-0 z-3'>
       <div className='container'>
@@ -14,18 +19,19 @@ const Header = () => {
           </div>
           <div className='d-flex'>
             <ul className='d-lg-flex d-md-flex d-sm-none d-none gap-lg-4 gap-md-3 align-items-center m-0'>
-              <li > <a href="#main">મુખ્યપૃષ્ઠ</a>  </li>
-              <li ><a href="#about">વિશે</a></li>
-              <li  > <a href="#upcoming">કાર્યક્રમ</a></li>
-              <li ><a href="#activity">પ્રવૃત્તિઓ</a></li>
-              <li ><a href="#contact">સંપર્ક</a></li>
-              <button className=' btn_set'>
-               <NavLink to="/donation" style={{color:"white"}}>દાન</NavLink> 
+              <li > <a href="#main">{t("home")}</a>  </li>
+              <li ><a href="#about">{t("about")}</a></li>
+              <li  > <a href="#upcoming">{t("event")}</a></li>
+              <li ><a href="#activity">{t("activities")}</a></li>
+              <li ><a href="#contact">{t("contact")}</a></li>
+              <li ><NavLink className="Navlink_set1" to="/login"> {t("admin")} </NavLink></li>
+              <button className=' btn_set btnanimation'>
+               <NavLink to="/donation" style={{color:"white"}}>{t("donate")}</NavLink> 
               </button>
-              <button className=' btn_set'>
-               <NavLink to="/Volunteer" style={{color:"white"}}>સ્વયંસેવક</NavLink> 
+              <button className=' btn_set '>
+               <NavLink to="/Volunteer" style={{color:"white"}}>{t("volunteer")}</NavLink> 
               </button>
-              <li ><NavLink className="Navlink_set1" to="/login"> વહીવટકર્તા </NavLink></li>
+              <LanguageSwitcher />
             </ul>
             <div className='d-lg-none d-md-none '>
               <Dropdown>

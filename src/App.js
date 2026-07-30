@@ -17,7 +17,7 @@ import { useEffect } from "react";
 import Donation from './pages/mainpage/Donation';
 
 function App() {
-   useEffect(() => {
+  useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
@@ -25,31 +25,31 @@ function App() {
     });
   }, []);
 
-useEffect(() => {
-  if (document.getElementById("google-translate-script")) return;
+  useEffect(() => {
+    if (document.getElementById("google-translate-script")) return;
 
-  window.googleTranslateElementInit = () => {
-    if (!window.google) return;
+    window.googleTranslateElementInit = () => {
+      if (!window.google) return;
 
-    new window.google.translate.TranslateElement(
-      {
-        pageLanguage: "en",
-        includedLanguages: "en,hi,gu",
-        layout:
-          window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-      },
-      "google_translate_element"
-    );
-  };
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,hi,gu",
+          layout:
+            window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        "google_translate_element"
+      );
+    };
 
-  const script = document.createElement("script");
-  script.id = "google-translate-script";
-  script.src =
-    "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-  script.async = true;
+    const script = document.createElement("script");
+    script.id = "google-translate-script";
+    script.src =
+      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    script.async = true;
 
-  document.body.appendChild(script);
-}, []);
+    document.body.appendChild(script);
+  }, []);
 
 
 
@@ -57,18 +57,18 @@ useEffect(() => {
     <div >
       <Routes>
         {/* <Route path='/' element={<Login/>} /> */}
-        <Route path='/' element={<Landingpage/>} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/dashboard' element={<Layout/>} >
-       <Route path='team' element={<TeamManagment/>} />
-       <Route path='dailywork' element={<Dailywork/>} />
-       </Route>
-       <Route path='/Volunteer' element={<Volunteer/>} />
-       <Route path='/donation' element={<Donation/>} />
-       
+        <Route path='/' element={<Landingpage />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/dashboard' element={<Layout />} >
+          <Route path='team' element={<TeamManagment />} />
+          <Route path='dailywork' element={<Dailywork />} />
+        </Route>
+        <Route path='/Volunteer' element={<Volunteer />} />
+        <Route path='/donation' element={<Donation />} />
+
       </Routes>
-    
-    {/* <div id="google_translate_element"> </div>
+
+      {/* <div id="google_translate_element"> </div>
       <div>Welcome to Next JS</div>
       <div>Good Morning...!!!</div>
       <div>

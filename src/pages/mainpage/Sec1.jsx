@@ -6,9 +6,11 @@ import { LuHandshake, LuTarget, LuUsers } from "react-icons/lu";
 import { MdFoundation } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaAward, FaSeedling } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 
 const Sec1 = () => {
+      const { t , i18n } = useTranslation();
     return (
        
         <div className='mb-5'>
@@ -35,8 +37,8 @@ const Sec1 = () => {
             data-aos-delay="100"
         >
             <MdFoundation style={{ color: "#009966" }} />
-            <h3 className='pt-2'>૨૦૧૮</h3>
-            <h5>સ્થાપિત</h5>
+            <h3 className='pt-2'>{t("year")}</h3>
+            <h5>{t("establishment")}</h5>
         </div>
 
         <div
@@ -45,8 +47,8 @@ const Sec1 = () => {
             data-aos-delay="250"
         >
             <LuHandshake style={{ color: "#009966" }} />
-            <h3 className='pt-2'>૩૦૦+</h3>
-            <h5>સ્વયંસેવક</h5>
+            <h3 className='pt-2'>{t("totalvolunteer")}</h3>
+            <h5>{t("volunteer")}</h5>
         </div>
 
         <div
@@ -55,8 +57,8 @@ const Sec1 = () => {
             data-aos-delay="400"
         >
             <FaSeedling style={{ color: "#009966" }} />
-            <h3 className='pt-2'>૧૦,૦૦,૦૦૦+</h3>
-            <h5>વૃક્ષારોપણ</h5>
+            <h3 className='pt-2'>{t("totalplant")}</h3>
+            <h5>{t("plantation")}</h5>
         </div>
 
         <div
@@ -65,8 +67,8 @@ const Sec1 = () => {
             data-aos-delay="550"
         >
             <FaAward style={{ color: "#009966" }} />
-            <h3 className='pt-2'>૧૦+</h3>
-            <h5>પુરસ્કાર વિજેતા</h5>
+            <h3 className='pt-2'>{t("totalaward")}</h3>
+            <h5>{t("award")}</h5>
         </div>
 
     </div>

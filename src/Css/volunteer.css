@@ -2,7 +2,7 @@
 
 .event-card{
     border: none;
-    border-radius: 18px;
+    border-radius: 8px;
     overflow: hidden;
     transition: all .4s ease;
     cursor: pointer;

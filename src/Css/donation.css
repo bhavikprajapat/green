@@ -1,0 +1,323 @@
+/* .bg_overlay_set2{
+    height: 60vh;
+    display: flex;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 0 8%;
+} */
+
+
+
+.donation-badge{
+    display: inline-block;
+    background: rgba(255,255,255,.15);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+.donation-title{
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.donation-title span{
+    color: #00d26a;
+}
+
+.hero-desc{
+    color: #f2f2f2;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.donate-btn{
+    background: #00b15d;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: .4s;
+}
+
+.donate-btn:hover{
+    background: #00994d;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.25);
+}
+
+.learn-btn{
+    border:2px solid #fff;
+    color:#fff;
+    background:transparent;
+    padding:12px 30px;
+    border-radius:40px;
+    transition:.4s;
+}
+
+.learn-btn:hover{
+    background:#fff;
+    color:#111;
+}
+
+
+/* where donate card api */
+
+
+
+
+.wheredonatecard{
+
+    background:#fff;
+    border-radius:20px;
+    padding:15px 25px;
+    text-align:center;
+
+    border:1px solid #e5e7eb;
+
+    transition:.4s;
+
+    cursor:pointer;
+}
+
+.wheredonatecard:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+    border-color:#065322;
+
+}
+
+.icon-box{
+
+    width:75px;
+    height:75px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:30%;
+
+    background:#eafaf0;
+
+    color:#0b8f54;
+
+    font-size:38px;
+
+    transition:.4s;
+
+}
+
+.wheredonatecard:hover .icon-box{
+
+    background:#b1d3be;
+
+    color:white;
+
+    transform:rotate(8deg) scale(1.1);
+
+}
+
+.wheredonatecard h4{
+
+    margin-top:25px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#16213e;
+
+}
+
+.wheredonatecard p{
+
+    margin:0px 0;
+
+    color:#666;
+
+    line-height:1.8;
+
+    min-height:120px;
+
+}
+
+.wheredonatecard span{
+
+    color:#0b8f54;
+
+    font-weight:700;
+
+}
+
+
+/* donation form css here */
+.donation-card{
+
+background:#fff;
+padding:50px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.donation-badge{
+
+display:inline-block;
+padding:8px 20px;
+background:#E8FFF3;
+color:#009966;
+border-radius:30px;
+font-weight:600;
+
+}
+
+.donation-card label{
+
+font-weight:600;
+margin-bottom:8px;
+display:block;
+
+}
+
+.donation-card .form-control,
+.donation-card .form-select{
+
+height:55px;
+border-radius:12px;
+
+}
+
+textarea.form-control{
+
+height:140px!important;
+
+}
+
+.amount-buttons{
+
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-top:10px;
+
+}
+
+.amount-buttons button{
+
+border:none;
+background:#E8FFF3;
+color:#009966;
+padding:12px 28px;
+border-radius:10px;
+font-weight:600;
+transition:.3s;
+
+}
+
+.amount-buttons button:hover{
+
+background:#009966;
+color:#fff;
+transform:translateY(-4px);
+
+}
+
+.donate-submit{
+
+background:#009966;
+color:#fff;
+padding:14px 45px;
+font-size:18px;
+border-radius:40px;
+transition:.3s;
+
+}
+
+.donate-submit:hover{
+
+background:#007a52;
+transform:translateY(-5px);
+
+}
+
+@media(max-width:768px){
+
+.donation-card{
+
+padding:30px 20px;
+
+}
+
+.amount-buttons{
+
+justify-content:center;
+
+}
+
+.amount-buttons button{
+
+width:45%;
+
+}
+
+.donate-submit{
+
+width:100%;
+
+}
+
+}
+
+/* donation form css close */
+
+
+@media(max-width:992px){
+
+.hero-title{
+    font-size:45px;
+}
+
+.hero-desc{
+    font-size:16px;
+}
+
+.bg_overlay_set2{
+    height:70vh;
+}
+}
+
+@media(max-width:576px){
+
+.hero-title{
+    font-size:34px;
+}
+
+.hero-desc br{
+    display:none;
+}
+
+.bg_overlay_set2{
+    padding:0 20px;
+    height:60vh;
+}
+
+.donate-btn,
+.learn-btn{
+    width:100%;
+    margin-bottom:12px;
+}
+}
