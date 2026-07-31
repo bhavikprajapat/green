@@ -15,6 +15,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Donation from './pages/mainpage/Donation';
+import Employeemanagement from './pages/employees/Employeemanagement';
 
 function App() {
   useEffect(() => {
@@ -62,6 +63,7 @@ function App() {
         <Route path='/dashboard' element={<Layout />} >
           <Route path='team' element={<TeamManagment />} />
           <Route path='dailywork' element={<Dailywork />} />
+          <Route path='employee' element={<Employeemanagement/>} />
         </Route>
         <Route path='/Volunteer' element={<Volunteer />} />
         <Route path='/donation' element={<Donation />} />

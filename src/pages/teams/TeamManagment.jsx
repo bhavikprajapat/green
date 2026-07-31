@@ -158,7 +158,7 @@ const TeamManagement = () => {
 
     </div>
 
-    {/* Performance Table */}
+  
 
     <div className="performance-card mt-4">
 
