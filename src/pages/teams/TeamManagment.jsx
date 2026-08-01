@@ -70,7 +70,7 @@ const TeamManagement = () => {
   );
 
   return (
-    <div className="container-fluid py-4 w-100">
+    <div className="p-4 w-100">
 
       <div className="row mt-4">
 

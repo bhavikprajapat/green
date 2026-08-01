@@ -1,0 +1,118 @@
+.donor-card{
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 18px;
+    padding: 25px 20px;
+    transition: .3s;
+    height: 100%;
+}
+
+.donor-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+.donoriconbox_outer{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0,153,102,.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.donoriconbox{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #009966;
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.donation-amount{
+    display: inline-block;
+    background: #009966;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* for remider css */
+
+.remider_box{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#E8F8F0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.birthicon{
+    font-size:24px;
+    color:#16a34a;
+}
+
+.reminder-card{
+    transition:.3s;
+    border-radius:12px;
+}
+
+.reminder-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+@media (max-width: 768px) {
+
+  .table {
+    min-width: 700px;
+  }
+
+  .card h5 {
+    font-size: 18px;
+  }
+
+}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+.premiumset h5{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+.premiumset h5{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+}

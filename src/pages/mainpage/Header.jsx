@@ -29,7 +29,7 @@ const Header = () => {
                <NavLink to="/donation" style={{color:"white"}}>{t("donate")}</NavLink> 
               </button>
               <button className=' btn_set '>
-               <NavLink to="/Volunteer" style={{color:"white"}}>{t("volunteer")}</NavLink> 
+               <NavLink to="/volunteer" style={{color:"white"}}>{t("volunteer")}</NavLink> 
               </button>
               <LanguageSwitcher />
             </ul>
@@ -50,7 +50,7 @@ const Header = () => {
                   <NavLink to="/donation" style={{color:"white"}}>દાન</NavLink> 
                   </button>
                   <button className=' btn_set w-100'>
-                   <NavLink to="/Volunteer" style={{color:"white"}}>સ્વયંસેવક</NavLink> 
+                   <NavLink to="/volunteer" style={{color:"white"}}>સ્વયંસેવક</NavLink> 
                   </button>
                   </div>
                   

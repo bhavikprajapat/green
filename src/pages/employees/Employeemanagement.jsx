@@ -7,7 +7,7 @@ import EmployeeList from './EmployeeList';
 
 const Employeemanagement = () => {
     return (
-        <div className='p-5'>
+        <div className='p-4'>
             <div>
                 <h3>કર્મચારી સંચાલન</h3>
                 <p>આજે, ૨૨ મે ૨૦૨૪ | દૈનિક ગતિવિધિઓ</p>
