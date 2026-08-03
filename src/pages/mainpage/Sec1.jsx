@@ -19,11 +19,11 @@ const Sec1 = () => {
                 id='main'
                 data-aos="zoom-in"
             >
-                <img
+                {/* <img
                     src={img2}
                     className='w-100 img_set'
                     alt=""
-                />
+                /> */}
             </div>
 
             <div

@@ -11,7 +11,7 @@ const Ouractivity = () => {
   const {t} = useTranslation()
     return (
   
-     <div style={{ background: "#F9FAFB" }} className="my-5">
+     <div  className="my-5">
       <div className="container py-5" id="upcoming">
         
         {/* Heading */}
