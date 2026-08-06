@@ -8,7 +8,7 @@ import '../../Css/navbar.css'
 import { FaBars } from 'react-icons/fa'
 
 
-const Navbar = ({show ,handleClose ,handleShow}) => {
+const Navbar = ({ show, handleClose, handleShow }) => {
     const dispatch = useDispatch()
     const theme = useSelector((state) => state.theme.dark)
     return (
@@ -20,9 +20,9 @@ const Navbar = ({show ,handleClose ,handleShow}) => {
                             <div className={theme ? "d-lg-none bg-transparent h3 px-3  order-0" : "d-lg-none h3 px-3 text-white order-0"} onClick={handleShow}>
                                 <CgMenuLeftAlt />
                             </div>
-                            <div className='order-md-1 order-2  w-100 ' style={{maxWidth:'400px'}}>
+                            <div className='order-md-1 order-2  w-100 ' style={{ maxWidth: '400px' }}>
                                 <div className='pos_set d-flex align-items-center rounded-0 pt-1'>
-                                        <input type="text" className='form-control fw-bold mx-auto' placeholder=' 🔍  શોધો' />
+                                    <input type="text" className='form-control fw-bold mx-auto' placeholder=' 🔍  શોધો' />
 
                                 </div>
                             </div>
@@ -38,6 +38,12 @@ const Navbar = ({show ,handleClose ,handleShow}) => {
                                     <div className='profile_round'>
 
                                     </div>
+                                    <button
+                                        className="btn btn-danger"
+                                        // onClick={handleLogout}
+                                    >
+                                        Logout
+                                    </button>
 
                                 </div>
                             </div>

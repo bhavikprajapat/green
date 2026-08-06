@@ -1,36 +1,92 @@
-import React, { useState } from "react";
-import "..//../Css/logout.css";
+import React, { useEffect, useState } from "react";
+import "../../Css/logout.css";
 import logo from "../../assets/logo/logo.png"; // Green Army Logo
 import bg from "../../assets/images/bg_img.png";
 import { FaUserAlt, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { NavLink, useNavigate } from "react-router-dom";
+import { loginUser } from "../../store/Reduxslice/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+
+
+    const { loading, success, error, user } = useSelector(
+        (state) => state.login
+    );
 
     const formik = useFormik({
         initialValues: {
-            email: "",
-            password: ""
+            mobile: "",
+            password: "",
+            role: ""
         },
         validationSchema: Yup.object({
-            email: Yup.string().email()
-                .required('required'),
+            mobile: Yup.string()
+                .matches(/^[6-9]\d{9}$/, "માન્ય મોબાઇલ નંબર દાખલ કરો")
+                .required("મોબાઇલ નંબર જરૂરી છે"),
 
             password: Yup.string()
+                .required('પાસવર્ડ જરૂરી છે'),
+
+            role: Yup.string()
                 .required('required'),
 
 
         }),
-        onSubmit: (values, { resetForm }) => {
-            console.log(values)
-            resetForm()
-        }
+        onSubmit: async (values) => {
+
+            const loginData = {
+
+                MobileNumber: values.mobile,
+                Password: values.password,
+                Role: values.role,
+
+            };
+
+            dispatch(loginUser(loginData));
+
+        },
+
 
 
     })
+
+    useEffect(() => {
+
+        if (success) {
+
+            toast.success("Login Successful");
+
+            setTimeout(() => {
+
+                navigate("/dashboard");
+
+            }, 1000);
+
+        }
+
+    }, [success, navigate]);
+
+    useEffect(() => {
+
+        if (error) {
+
+            toast.error(
+                error?.message || "Invalid Login Credentials"
+            );
+
+        }
+
+    }, [error]);
+
 
     const { handleChange, handleSubmit, handleBlur, touched, errors, values } = formik
     return (
@@ -74,21 +130,68 @@ const Login = () => {
                                     </span>
 
                                     <input
-                                        type="email"
-                                        placeholder="યુઝર નામ દાખલ કરો"
+                                        type="number"
+                                        placeholder="યુઝર નંબર  દાખલ કરો"
                                         className="form-control"
-                                        name="email"
+                                        name="mobile"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
-                                        value={values.email}
+                                        value={values.mobile}
                                     />
 
                                 </div>
                                 {
-                                    touched.email && errors.email ? (
-                                        <div style={{ color: "Red" }} className="m-0 p-0">{errors.email}</div>
+                                    touched.mobile && errors.mobile ? (
+                                        <div style={{ color: "Red" }} className="m-0 p-0">{errors.mobile}</div>
                                     ) : null
                                 }
+
+
+
+                                <div className="mb-3">
+
+
+                                    <div className="">
+                                        <select
+                                            className={`form-select role-select ${formik.touched.role && formik.errors.role ? "is-invalid" : ""
+                                                }`}
+                                            name="role"
+                                            value={formik.values.role}
+                                            onChange={formik.handleChange}
+                                            onBlur={formik.handleBlur}
+                                        >
+
+                                            <option value="">
+                                                તમારી ભૂમિકા પસંદ કરો
+                                            </option>
+
+                                            <option value="SuperAdmin">
+                                                સુપર એડમિન
+                                            </option>
+
+                                            <option value="TeamAdmin">
+                                                ટીમ એડમિન
+                                            </option>
+
+                                            <option value="TeamSubAdmin">
+                                                ટીમ સબ-એડમિન
+                                            </option>
+
+                                            <option value="Employee">
+                                                સ્વયંસેવક
+                                            </option>
+
+                                        </select>
+
+                                        <div className="invalid-feedback">
+                                            {formik.errors.role}
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
 
                                 <div className="input-group mb-3">
 
@@ -121,8 +224,8 @@ const Login = () => {
                                         <div style={{ color: "Red" }}>{errors.password}</div>
                                     ) : null
                                 }
-
-                                <div className="d-flex justify-content-between mb-4">
+                                {/* password and remember password */}
+                                {/* <div className="d-flex justify-content-between mb-4">
 
                                     <div>
 
@@ -136,10 +239,25 @@ const Login = () => {
 
                                     <a href="">પાસવર્ડ ભૂલી ગયા?</a>
 
-                                </div>
+                                </div> */}
 
-                                <button className="btn btn-success w-100 login-btn" type='submit'>
-                                    લોગિન કરો
+                                <p className="text-center mt-3">
+                                    સ્વયંસેવક છો?
+                                    <NavLink to="/volunteer-signup" className="ms-2 text-success fw-bold" >
+                                        અહીં રજિસ્ટર કરો
+                                    </NavLink>
+                                </p>
+
+                                <button
+                                    type="submit"
+                                    className="btn btn-success w-100 login-btn"
+                                    disabled={loading}
+                                >
+                                    {
+                                        loading
+                                            ? "Logging..."
+                                            : "લોગિન કરો"
+                                    }
                                 </button>
                             </form>
 

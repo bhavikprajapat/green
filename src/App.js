@@ -18,6 +18,7 @@ import Donation from './pages/mainpage/Donation';
 import Employeemanagement from './pages/employees/Employeemanagement';
 import Donor from './pages/donors/Donor';
 import NurseryStock from './pages/nursery/NurseryStock';
+import VolunteerSignup from './pages/auth/ValunteerSignup/VolunteerSignup';
 
 function App() {
   useEffect(() => {
@@ -62,12 +63,13 @@ function App() {
         {/* <Route path='/' element={<Login/>} /> */}
         <Route path='/' element={<Landingpage />} />
         <Route path='/login' element={<Login />} />
+        <Route path="/volunteer-signup" element={<VolunteerSignup />} />
         <Route path='/dashboard' element={<Layout />} >
           <Route path='team' element={<TeamManagment />} />
           <Route path='dailywork' element={<Dailywork />} />
           <Route path='employee' element={<Employeemanagement />} />
-          <Route path='donor' element={<Donor/>} />
-          <Route path='nursury' element={<NurseryStock/>} />
+          <Route path='donor' element={<Donor />} />
+          <Route path='nursury' element={<NurseryStock />} />
         </Route>
         <Route path='/volunteer' element={<Volunteer />} />
         <Route path='/donation' element={<Donation />} />
