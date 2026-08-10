@@ -2,6 +2,7 @@ import React from 'react'
 import '../../Css/nursery.css'
 import ReactECharts from "echarts-for-react";
 import Treeplantationreport from './Treeplantationreport';
+import PlantProgress from './PlantProgress';
 
 const NurseryStock = () => {
 
@@ -33,13 +34,15 @@ const NurseryStock = () => {
         ],
     };
 
+    
+
     return (
         <div>
             <div className='p-4'>
                 <h3>વૃક્ષારોપણ અને નર્સરી મેનેજમેન્ટ</h3>
                 <p>તમારા નર્સરી સ્ટોક અને વૃક્ષારોપણની કામગીરીનું વિગતવાર નિરીક્ષણ કરો.</p>
                 <div className='row'>
-                    <div className='card  col-7'>
+                    <div className='card  col-8'>
                         <div className='d-flex justify-content-between py-3'>
                             <h6>સ્ટોક હિસ્ટ્રી અને આંકડા</h6>
                             <h6>
@@ -83,9 +86,9 @@ const NurseryStock = () => {
                         </div>
                         
                     </div>
-                    <div className='col-5'>
+                    <div className='col-4'>
                     <div>
-                      Nursery Details   
+                      <PlantProgress/>
                     </div>
                     </div>
                     <div>

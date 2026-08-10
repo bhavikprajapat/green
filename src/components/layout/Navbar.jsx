@@ -14,7 +14,7 @@ const Navbar = ({ show, handleClose, handleShow }) => {
     return (
         <div className='w-100'>
             <div className='w-100 '>
-                <div className={theme ? "navbar_set navbar-custom" : "navbar_set_dark "}>
+                <div className={theme ? "navbar_set " : "navbar_set_dark "}>
                     <div className='py-md-2 px-md-5 '>
                         <div className='d-flex flex-md-nowrap  flex-wrap  justify-content-between  align-items-center'>
                             <div className={theme ? "d-lg-none bg-transparent h3 px-3  order-0" : "d-lg-none h3 px-3 text-white order-0"} onClick={handleShow}>

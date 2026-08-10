@@ -35,7 +35,7 @@ const Dailywork = () => {
 
   return (
     <div>
-       <div className=" activity-page p-4">
+       <div className=" activity-page p-4 py-sm-2">
 
       <div className="row">
 

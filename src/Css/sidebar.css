@@ -1,68 +1,139 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 li {
     text-decoration: none;
     list-style: none;
 }
 
-.sidebar {
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar,
+.sidebar_dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+
     width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+
+    height: 100vh;
     min-height: 100vh;
-    background: #F4FCF0;
-    color: #006B2C;
+
     padding: 25px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+
+    z-index: 1000;
 }
 
+
+.sidebar {
+    background: #F4FCF0;
+    color: #006B2C;
+}
+
+
 .sidebar_dark {
-    width: 300px;
-    min-height: 100vh;
-    padding: 25px;
     background-color: #111827;
     color: white;
 }
 
 
+/* =========================
+   LOGO
+========================= */
 
-.Navlink_set {
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 14px 18px;
-    margin-bottom: 10px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 17px;
-    font-weight: 700;
-    transition: 0.3s;
+.sidebar .logo,
+.sidebar_dark .logo {
+    max-width: 100%;
+    height: auto;
 }
 
+
+/* =========================
+   SIDEBAR LINKS
+========================= */
+
+.Navlink_set,
 .Navlink_set_dark {
     list-style: none;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+
     display: flex;
     align-items: center;
+
     gap: 20px;
+
+    width: 100%;
+    min-width: 0;
+
     padding: 14px 18px;
     margin-bottom: 10px;
+
     border-radius: 12px;
+
     cursor: pointer;
+
     font-size: 17px;
     font-weight: 700;
-    transition: 0.3s;
+
+    box-sizing: border-box;
+
+    /* Important */
+    white-space: nowrap;
+
+    /* Hover par size change nahi hoga */
+    transition: background-color 0.3s,
+                color 0.3s;
 }
+
+
+.Navlink_set {
+    color: black;
+}
+
+
+.Navlink_set_dark {
+    color: rgb(255, 255, 255);
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.Navlink_set:hover {
+    background: #E9F0E5;
+    color: #006B2C;
+
+    /* Border width change nahi karega */
+    box-shadow: inset -5px 0 0 #006B2C;
+}
+
 
 .Navlink_set_dark:hover {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
 }
 
-.Navlink_set:hover {
-    background:#E9F0E5;
-    color:#006B2C;
-    border-right: 5px solid #006B2C;
-}
+
+/* =========================
+   TRACKING CARD
+========================= */
 
 .tracking-card {
     background: linear-gradient(135deg, #d5def3, #0c6268);
@@ -73,6 +144,7 @@ li {
     font-weight: 600;
 }
 
+
 .tracking-card_dark {
     background: linear-gradient(135deg, #1b2a41, #12343b);
     border-radius: 18px;
@@ -82,6 +154,11 @@ li {
     font-weight: 600;
 }
 
+
+/* =========================
+   MAIN LOGO
+========================= */
+
 .mainlogo {
     background-color: #374151;
     padding: 10px;
@@ -89,26 +166,39 @@ li {
     color: white;
 }
 
-@media (min-width: 576px) { 
 
- }
+/* =========================
+   DESKTOP
+========================= */
 
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 992px) {
 
- }
+    .sidebar,
+    .sidebar_dark {
+        width: 300px;
+        min-width: 300px;
+        max-width: 300px;
+    }
 
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
+}
 
- }
 
-/* // X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
+/* =========================
+   MOBILE
+========================= */
 
- }
+@media (max-width: 991px) {
 
-/* // XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) { 
+    .sidebar,
+    .sidebar_dark {
+        position: relative;
 
- }
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+
+        height: auto;
+        min-height: 100vh;
+    }
+
+}

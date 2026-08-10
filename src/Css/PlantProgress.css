@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f7f7;
+  font-family: Arial, "Noto Sans Gujarati", sans-serif;
+}
+
+/* Main Card */
+.nursery-card {
+  width: 100%;
+  height: 10;
+  margin: px auto;
+  padding: 17px 19px 19px;
+
+  background: #ffffff;
+
+  border: 1px solid #cbd5d0;
+  border-radius: 9px;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Title */
+.nursery-title {
+  margin: 0 0 20px;
+
+  font-size: 17px;
+  font-weight: 700;
+  color: #222;
+
+  line-height: 1.2;
+}
+
+/* Plant List */
+.plant-list {
+  width: 100%;
+}
+
+/* Individual Plant */
+.plant-item {
+  margin-bottom: 17px;
+}
+
+/* Last item spacing */
+.plant-item:last-child {
+  margin-bottom: 25px;
+}
+
+/* Header */
+.plant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 8px;
+}
+
+/* Name */
+.plant-name {
+  font-size: 14px;
+  color: #222;
+  white-space: nowrap;
+}
+
+.plant-name span {
+  color: #222;
+}
+
+/* Count */
+.plant-count {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+
+  white-space: nowrap;
+}
+
+/* Progress Background */
+.progress-bg {
+  width: 100%;
+  height: 7px;
+
+  background: #e5e8e7;
+
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Progress Fill */
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Green */
+.progress-fill.green {
+  background: #087a3b;
+}
+
+/* Yellow */
+.progress-fill.yellow {
+  background: #eab400;
+}
+
+/* Red */
+.progress-fill.red {
+  background: #d92f35;
+}
+
+/* Warning */
+.warning-text {
+  margin-top: 4px;
+
+  font-size: 8px;
+  line-height: 1;
+
+  color: #e53935;
+}
+
+/* Bottom Button */
+.details-btn {
+  width: 100%;
+  height: 32px;
+
+  background: #ffffff;
+
+  border: 1px solid #c9ded5;
+  border-radius: 6px;
+
+  color: #008052;
+
+  font-size: 13px;
+  font-family: inherit;
+
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  background: #f5faf7;
+}

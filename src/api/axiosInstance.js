@@ -5,10 +5,8 @@ const axiosInstance = axios.create({
     timeout: 30000,
 });
 
-// Agar future me login token add karna ho
 axiosInstance.interceptors.request.use(
     (config) => {
-
         const token = localStorage.getItem("token");
 
         if (token) {

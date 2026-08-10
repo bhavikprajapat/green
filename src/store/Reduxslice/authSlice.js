@@ -4,9 +4,11 @@ import authService from "../../Services/authService";
 // Login API
 export const loginUser = createAsyncThunk(
     "auth/loginUser",
+
     async (loginData, { rejectWithValue }) => {
         try {
             const response = await authService.login(loginData);
+
             return response;
         } catch (error) {
             return rejectWithValue(
@@ -30,6 +32,7 @@ const initialState = {
 
 const authSlice = createSlice({
     name: "auth",
+
     initialState,
 
     reducers: {
@@ -47,43 +50,39 @@ const authSlice = createSlice({
     extraReducers: (builder) => {
         builder
 
-            // Pending
+            // LOGIN PENDING
             .addCase(loginUser.pending, (state) => {
                 state.loading = true;
                 state.error = null;
+                state.success = false;
             })
 
-            // Success
+            // LOGIN SUCCESS
             .addCase(loginUser.fulfilled, (state, action) => {
                 state.loading = false;
                 state.success = true;
 
-                state.user =
-                    action.payload.user ||
-                    action.payload.data?.user ||
-                    null;
+                state.user = action.payload.data?.user || null;
 
-                state.token =
-                    action.payload.token ||
-                    action.payload.data?.token ||
-                    null;
+                state.token = action.payload.data?.token || null;
 
                 state.message = action.payload.message || "";
 
-                // Token Save
+                // Save token
                 if (state.token) {
                     localStorage.setItem("token", state.token);
                 }
             })
 
-            // Failed
+            // LOGIN FAILED
             .addCase(loginUser.rejected, (state, action) => {
                 state.loading = false;
                 state.success = false;
+
                 state.error = action.payload;
+
                 state.message =
-                    action.payload?.message ||
-                    "Login Failed";
+                    action.payload?.message || "Login Failed";
             });
     },
 });
