@@ -2,13 +2,22 @@ import axiosInstance from "../api/axiosInstance";
 
 class DonorService {
 
-    // Get all donors
+    // =========================================
+    // GET ALL DONORS
+    // =========================================
+
     async getAllDonors() {
-        const response = await axiosInstance.get("/api/donor");
+        const response = await axiosInstance.get(
+            "/api/donor"
+        );
+
         return response.data;
     }
 
-    // Add donor
+    // =========================================
+    // ADD DONOR
+    // =========================================
+
     async addDonor(formData) {
         const response = await axiosInstance.post(
             "/api/donor",
@@ -18,20 +27,27 @@ class DonorService {
         return response.data;
     }
 
-    // Update donor
-    async updateDonor(id, formData) {
+    // =========================================
+    // UPDATE DONOR
+    // PUT /api/donor/uk/:DonorUkId
+    // =========================================
+
+    async updateDonor(donorUkId, formData) {
         const response = await axiosInstance.put(
-            `/api/donor/${id}`,
+            `/api/donor/uk/${donorUkId}`,
             formData
         );
 
         return response.data;
     }
 
-    // Delete donor
-    async deleteDonor(id) {
+    // =========================================
+    // DELETE DONOR
+    // =========================================
+
+    async deleteDonor(donorUkId) {
         const response = await axiosInstance.delete(
-            `/api/donor/${id}`
+            `/api/donor/uk/${donorUkId}`
         );
 
         return response.data;

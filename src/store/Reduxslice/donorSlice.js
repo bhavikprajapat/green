@@ -1,176 +1,423 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import donorService from "../../Services/donorService";
 
-
-// ============================
+// =====================================================
 // GET ALL DONORS
-// ============================
+// =====================================================
 
 export const getAllDonors = createAsyncThunk(
-    "donor/getAllDonors",
-    async (_, { rejectWithValue }) => {
+  "donor/getAllDonors",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response =
+        await donorService.getAllDonors();
 
-        try {
-
-            const response = await donorService.getAllDonors();
-
-            return response;
-
-        } catch (error) {
-
-            return rejectWithValue(
-                error.response?.data || {
-                    success: false,
-                    message: "Donor list fetch failed"
-                }
-            );
+      return response;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data || {
+          success: false,
+          message: "Donor list fetch failed",
         }
+      );
     }
+  }
 );
 
-
-// ============================
+// =====================================================
 // ADD DONOR
-// ============================
+// =====================================================
 
 export const addDonor = createAsyncThunk(
-    "donor/addDonor",
-    async (formData, { rejectWithValue }) => {
+  "donor/addDonor",
+  async (formData, { rejectWithValue }) => {
+    try {
+      const response =
+        await donorService.addDonor(formData);
 
-        try {
-
-            const response = await donorService.addDonor(formData);
-
-            return response;
-
-        } catch (error) {
-
-            return rejectWithValue(
-                error.response?.data || {
-                    success: false,
-                    message: "Donor create failed"
-                }
-            );
+      return response;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data || {
+          success: false,
+          message: "Donor create failed",
         }
+      );
     }
+  }
 );
 
+// =====================================================
+// UPDATE DONOR
+// =====================================================
+
+export const updateDonor = createAsyncThunk(
+  "donor/updateDonor",
+  async (
+    { donorUkId, formData },
+    { rejectWithValue }
+  ) => {
+    try {
+      const response =
+        await donorService.updateDonor(
+          donorUkId,
+          formData
+        );
+
+      return response;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data || {
+          success: false,
+          message: "Donor update failed",
+        }
+      );
+    }
+  }
+);
+
+// =====================================================
+// DELETE DONOR
+// =====================================================
+
+export const deleteDonor = createAsyncThunk(
+  "donor/deleteDonor",
+  async (
+    donorUkId,
+    { rejectWithValue }
+  ) => {
+    try {
+      const response =
+        await donorService.deleteDonor(
+          donorUkId
+        );
+
+      return response;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data || {
+          success: false,
+          message: "Donor delete failed",
+        }
+      );
+    }
+  }
+);
+
+// =====================================================
+// INITIAL STATE
+// =====================================================
 
 const initialState = {
+  loading: false,
 
-    loading: false,
+  donors: [],
 
-    donors: [],
+  addLoading: false,
 
-    addLoading: false,
+  updateLoading: false,
 
-    success: false,
+  deleteLoading: false,
 
-    message: "",
+  success: false,
 
-    error: null
+  message: "",
+
+  error: null,
+
+  selectedDonor: null,
 };
 
+// =====================================================
+// SLICE
+// =====================================================
 
 const donorSlice = createSlice({
+  name: "donor",
 
-    name: "donor",
+  initialState,
 
-    initialState,
+  reducers: {
+    // ===============================================
+    // CLEAR COMMON STATE
+    // ===============================================
 
-    reducers: {
-
-        clearDonorState: (state) => {
-
-            state.success = false;
-            state.message = "";
-            state.error = null;
-
-        }
-
+    clearDonorState: (state) => {
+      state.success = false;
+      state.message = "";
+      state.error = null;
     },
 
-    extraReducers: (builder) => {
+    // ===============================================
+    // SET SELECTED DONOR
+    // ===============================================
 
-        builder
+    setSelectedDonor: (
+      state,
+      action
+    ) => {
+      state.selectedDonor =
+        action.payload;
+    },
 
-            // ============================
-            // GET DONORS
-            // ============================
+    // ===============================================
+    // CLEAR SELECTED DONOR
+    // ===============================================
 
-            .addCase(getAllDonors.pending, (state) => {
+    clearSelectedDonor: (state) => {
+      state.selectedDonor = null;
+    },
+  },
 
-                state.loading = true;
-                state.error = null;
+  extraReducers: (builder) => {
+    builder
 
-            })
+      // =================================================
+      // GET ALL DONORS
+      // =================================================
 
-            .addCase(getAllDonors.fulfilled, (state, action) => {
+      .addCase(
+        getAllDonors.pending,
+        (state) => {
+          state.loading = true;
+          state.error = null;
+        }
+      )
 
-                state.loading = false;
+      .addCase(
+        getAllDonors.fulfilled,
+        (state, action) => {
+          state.loading = false;
 
-                state.donors =
-                    action.payload?.data || [];
+          state.donors =
+            action.payload?.data || [];
 
-            })
+          state.error = null;
+        }
+      )
 
-            .addCase(getAllDonors.rejected, (state, action) => {
+      .addCase(
+        getAllDonors.rejected,
+        (state, action) => {
+          state.loading = false;
 
-                state.loading = false;
+          state.error =
+            action.payload?.message ||
+            "Donor list fetch failed";
+        }
+      )
 
-                state.error =
-                    action.payload?.message ||
-                    "Donor list fetch failed";
+      // =================================================
+      // ADD DONOR
+      // =================================================
 
-            })
+      .addCase(
+        addDonor.pending,
+        (state) => {
+          state.addLoading = true;
 
+          state.success = false;
+          state.error = null;
+          state.message = "";
+        }
+      )
 
-            // ============================
-            // ADD DONOR
-            // ============================
+      .addCase(
+        addDonor.fulfilled,
+        (state, action) => {
+          state.addLoading = false;
 
-            .addCase(addDonor.pending, (state) => {
+          state.success =
+            action.payload?.success !== false;
 
-                state.addLoading = true;
+          state.message =
+            action.payload?.message ||
+            "Donor created successfully";
 
-                state.success = false;
+          state.error = null;
 
-                state.error = null;
+          // API donor return કરે તો list માં add કરો
+          if (action.payload?.data) {
+            state.donors.push(
+              action.payload.data
+            );
+          }
+        }
+      )
 
-            })
+      .addCase(
+        addDonor.rejected,
+        (state, action) => {
+          state.addLoading = false;
 
-            .addCase(addDonor.fulfilled, (state, action) => {
+          state.success = false;
 
-                state.addLoading = false;
+          state.error =
+            action.payload?.message ||
+            "Donor create failed";
 
-                state.success = true;
+          state.message =
+            action.payload?.message || "";
+        }
+      )
 
-                state.message =
-                    action.payload?.message ||
-                    "Donor created successfully";
+      // =================================================
+      // UPDATE DONOR
+      // =================================================
 
-            })
+      .addCase(
+        updateDonor.pending,
+        (state) => {
+          state.updateLoading = true;
 
-            .addCase(addDonor.rejected, (state, action) => {
+          state.success = false;
 
-                state.addLoading = false;
+          state.error = null;
 
-                state.success = false;
+          state.message = "";
+        }
+      )
 
-                state.error =
-                    action.payload?.message ||
-                    "Donor create failed";
+      .addCase(
+        updateDonor.fulfilled,
+        (state, action) => {
+          state.updateLoading = false;
 
-            });
+          state.success =
+            action.payload?.success !== false;
 
-    }
+          state.message =
+            action.payload?.message ||
+            "Donor updated successfully";
 
+          state.error = null;
+
+          // ============================================
+          // UPDATED DONOR
+          // ============================================
+
+          const updatedDonor =
+            action.payload?.data;
+
+          if (updatedDonor) {
+            const index =
+              state.donors.findIndex(
+                (donor) =>
+                  donor.DonorUkId ===
+                  updatedDonor.DonorUkId
+              );
+
+            if (index !== -1) {
+              state.donors[index] =
+                updatedDonor;
+            } else {
+              // अगर list में नहीं है
+              state.donors.push(
+                updatedDonor
+              );
+            }
+
+            state.selectedDonor =
+              updatedDonor;
+          }
+        }
+      )
+
+      .addCase(
+        updateDonor.rejected,
+        (state, action) => {
+          state.updateLoading = false;
+
+          state.success = false;
+
+          state.error =
+            action.payload?.message ||
+            "Donor update failed";
+
+          state.message =
+            action.payload?.message || "";
+        }
+      )
+
+      // =================================================
+      // DELETE DONOR
+      // =================================================
+
+      .addCase(
+        deleteDonor.pending,
+        (state) => {
+          state.deleteLoading = true;
+
+          state.success = false;
+
+          state.error = null;
+
+          state.message = "";
+        }
+      )
+
+      .addCase(
+        deleteDonor.fulfilled,
+        (state, action) => {
+          state.deleteLoading = false;
+
+          state.success =
+            action.payload?.success !== false;
+
+          state.message =
+            action.payload?.message ||
+            "Donor deleted successfully";
+
+          state.error = null;
+
+          // ============================================
+          // DELETE FROM REDUX LIST
+          // ============================================
+
+          const deletedDonorUkId =
+            action.meta.arg;
+
+          state.donors =
+            state.donors.filter(
+              (donor) =>
+                donor.DonorUkId !==
+                deletedDonorUkId
+            );
+
+          state.selectedDonor = null;
+        }
+      )
+
+      .addCase(
+        deleteDonor.rejected,
+        (state, action) => {
+          state.deleteLoading = false;
+
+          state.success = false;
+
+          state.error =
+            action.payload?.message ||
+            "Donor delete failed";
+
+          state.message =
+            action.payload?.message || "";
+        }
+      );
+  },
 });
 
+// =====================================================
+// ACTIONS
+// =====================================================
 
 export const {
-    clearDonorState
+  clearDonorState,
+  setSelectedDonor,
+  clearSelectedDonor,
 } = donorSlice.actions;
 
+// =====================================================
+// REDUCER
+// =====================================================
 
 export default donorSlice.reducer;

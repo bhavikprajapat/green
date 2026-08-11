@@ -26,7 +26,7 @@ const Login = () => {
         initialValues: {
             mobile: "",
             password: "",
-            role: ""
+            // role: ""
         },
         validationSchema: Yup.object({
             mobile: Yup.string()
@@ -36,8 +36,8 @@ const Login = () => {
             password: Yup.string()
                 .required('પાસવર્ડ જરૂરી છે'),
 
-            role: Yup.string()
-                .required('required'),
+            // role: Yup.string()
+            //     .required('required'),
 
 
         }),
@@ -47,7 +47,7 @@ const Login = () => {
 
                 MobileNumber: values.mobile,
                 Password: values.password,
-                Role: values.role,
+            
 
             };
 
@@ -96,9 +96,9 @@ const Login = () => {
         >
             <div className="overlay"></div>
 
-            <div className="login-title">
+            {/* <div className="login-title">
                 1. લોગિન કરો
-            </div>
+            </div> */}
 
             <div className="container-fluid h-100">
 
@@ -148,7 +148,7 @@ const Login = () => {
 
 
 
-                                <div className="mb-3">
+                                {/* <div className="mb-3">
 
 
                                     <div className="">
@@ -188,7 +188,7 @@ const Login = () => {
                                         </div>
 
                                     </div>
-                                </div>
+                                </div> */}
 
 
 

@@ -19,6 +19,9 @@ import Employeemanagement from './pages/employees/Employeemanagement';
 import Donor from './pages/donors/Donor';
 import NurseryStock from './pages/nursery/NurseryStock';
 import VolunteerSignup from './pages/auth/ValunteerSignup/VolunteerSignup';
+import Adddonor from './pages/donors/Adddonor';
+import AddDonor from './pages/donors/Adddonor';
+import { ToastContainer } from "react-toastify";
 
 function App() {
   useEffect(() => {
@@ -69,12 +72,28 @@ function App() {
           <Route path='dailywork' element={<Dailywork />} />
           <Route path='employee' element={<Employeemanagement />} />
           <Route path='donor' element={<Donor />} />
+          <Route path='donor/add' element={<Adddonor/>} />
+          <Route
+    path="/dashboard/donor/edit/:DonorUkId"
+    element={<AddDonor />}
+/>
           <Route path='nursury' element={<NurseryStock />} />
         </Route>
         <Route path='/volunteer' element={<Volunteer />} />
         <Route path='/donation' element={<Donation />} />
 
       </Routes>
+
+      <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                pauseOnHover
+                draggable
+                theme="colored"
+            />
 
       {/* <div id="google_translate_element"> </div>
       <div>Welcome to Next JS</div>

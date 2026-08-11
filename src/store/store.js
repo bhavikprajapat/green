@@ -7,12 +7,14 @@ import volunteerReducer from "./Reduxslice/volunteerSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 import donorReducer from "./Reduxslice/donorSlice";
+import donationReducer from "./Reduxslice/donationSlice";
 
 const rootReducer = combineReducers({
     login: authReducer,
     theme: themeReducer,
     volunteer: volunteerReducer,
       donor: donorReducer,
+        donation: donationReducer,
 
 });
 

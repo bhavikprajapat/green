@@ -1,204 +1,629 @@
-/* =========================
+/* =========================================================
    GLOBAL
-========================= */
+========================================================= */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 li {
-    text-decoration: none;
-    list-style: none;
+  text-decoration: none;
+  list-style: none;
 }
 
 
+/* =========================================================
+   OFFCANVAS
+========================================================= */
 
-/* =========================
+.sidebar-offcanvas {
+  width: 300px !important;
+  max-width: 300px !important;
+
+  border: none !important;
+
+  box-shadow: none !important;
+}
+
+
+/* Light Offcanvas */
+
+.offcanvas-light {
+  background: #f4fcf0 !important;
+}
+
+
+/* Dark Offcanvas */
+
+.offcanvas-dark {
+  background: #111827 !important;
+}
+
+
+/* =========================================================
    SIDEBAR
-========================= */
+========================================================= */
 
 .sidebar,
 .sidebar_dark {
-    position: fixed;
-    top: 0;
-    left: 0;
+  position: fixed;
 
-    width: 300px;
-    min-width: 300px;
-    max-width: 300px;
+  top: 0;
+  left: 0;
 
-    height: 100vh;
-    min-height: 100vh;
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
 
-    padding: 25px;
+  height: 100vh;
+  min-height: 100vh;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+  padding: 20px 16px;
 
-    box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
 
-    z-index: 1000;
+  box-sizing: border-box;
+
+  z-index: 1000;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
+
+/* =========================================================
+   LIGHT SIDEBAR
+========================================================= */
 
 .sidebar {
-    background: #F4FCF0;
-    color: #006B2C;
+  background: #f4fcf0;
+
+  color: #006b2c;
 }
 
+
+/* =========================================================
+   DARK SIDEBAR
+========================================================= */
 
 .sidebar_dark {
-    background-color: #111827;
-    color: white;
+  background: #111827;
+
+  color: #ffffff;
 }
 
 
-/* =========================
+/* =========================================================
+   LOGO WRAPPER
+========================================================= */
+
+.sidebar-logo-wrapper {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 0 18px !important;
+
+  padding: 0 0 18px !important;
+
+  border-bottom: 1px solid rgba(0, 107, 44, 0.12);
+}
+
+
+/* Dark Logo Divider */
+
+.sidebar_dark .sidebar-logo-wrapper {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
    LOGO
-========================= */
+========================================================= */
 
 .sidebar .logo,
 .sidebar_dark .logo {
-    max-width: 100%;
-    height: auto;
+  width: 145px;
+
+  max-width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  border-radius: 8px;
+
+  transition: transform 0.25s ease;
 }
 
 
-/* =========================
-   SIDEBAR LINKS
-========================= */
+/* Logo hover */
+
+.sidebar .logo:hover,
+.sidebar_dark .logo:hover {
+  transform: scale(1.02);
+}
+
+
+/* =========================================================
+   MOBILE LOGO
+========================================================= */
+
+.mobile-logo-wrapper {
+  margin: 0;
+
+  padding: 0;
+}
+
+.mobile-logo {
+  width: 90px;
+
+  height: auto;
+
+  max-width: 100%;
+
+  object-fit: contain;
+
+  border-radius: 7px;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu {
+  width: 100%;
+
+  padding: 0;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
 
 .Navlink_set,
 .Navlink_set_dark {
-    list-style: none;
-    text-decoration: none;
+  position: relative;
 
-    display: flex;
-    align-items: center;
+  display: flex;
 
-    gap: 20px;
+  align-items: center;
 
-    width: 100%;
-    min-width: 0;
+  width: 100%;
 
-    padding: 14px 18px;
-    margin-bottom: 10px;
+  min-width: 0;
 
-    border-radius: 12px;
+  min-height: 46px;
 
-    cursor: pointer;
+  padding: 8px 12px;
 
-    font-size: 17px;
-    font-weight: 700;
+  margin-bottom: 6px;
 
-    box-sizing: border-box;
+  gap: 12px;
 
-    /* Important */
-    white-space: nowrap;
+  border-radius: 10px;
 
-    /* Hover par size change nahi hoga */
-    transition: background-color 0.3s,
-                color 0.3s;
+  cursor: pointer;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-sizing: border-box;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
 }
 
+
+/* =========================================================
+   LINK TEXT
+========================================================= */
+
+.Navlink_set span,
+.Navlink_set_dark span {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   LIGHT LINK
+========================================================= */
 
 .Navlink_set {
-    color: black;
+  color: #26352c;
 }
 
+
+/* =========================================================
+   DARK LINK
+========================================================= */
 
 .Navlink_set_dark {
-    color: rgb(255, 255, 255);
+  color: #e5e7eb;
 }
 
 
-/* =========================
-   HOVER
-========================= */
+/* =========================================================
+   ICON
+========================================================= */
+
+.Navlink_set svg,
+.Navlink_set_dark svg {
+  width: 18px;
+
+  height: 18px;
+
+  min-width: 18px;
+
+  padding: 7px;
+
+  border-radius: 8px;
+
+  box-sizing: content-box;
+
+  flex-shrink: 0;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* =========================================================
+   LIGHT ICON
+========================================================= */
+
+.Navlink_set svg {
+  color: #087a3b;
+
+  background: #e7f4e9;
+}
+
+
+/* =========================================================
+   DARK ICON
+========================================================= */
+
+.Navlink_set_dark svg {
+  color: #8fd3a7;
+
+  background: #1d3025;
+}
+
+
+/* =========================================================
+   LIGHT HOVER
+========================================================= */
 
 .Navlink_set:hover {
-    background: #E9F0E5;
-    color: #006B2C;
+  color: #006b2c;
 
-    /* Border width change nahi karega */
-    box-shadow: inset -5px 0 0 #006B2C;
+  background: #e7f3e3;
+
+  transform: translateX(2px);
+
+  box-shadow:
+    0 3px 10px rgba(0, 107, 44, 0.06);
 }
 
+
+/* Hover Icon */
+
+.Navlink_set:hover svg {
+  color: #ffffff;
+
+  background: #087a3b;
+
+  transform: scale(1.03);
+}
+
+
+/* =========================================================
+   DARK HOVER
+========================================================= */
 
 .Navlink_set_dark:hover {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+  color: #ffffff;
+
+  background: #1d2937;
+
+  transform: translateX(2px);
 }
 
 
-/* =========================
+/* Dark Hover Icon */
+
+.Navlink_set_dark:hover svg {
+  color: #ffffff;
+
+  background: #087a3b;
+}
+
+
+/* =========================================================
+   ACTIVE LIGHT
+========================================================= */
+
+.Navlink_set.active {
+  color: #006b2c;
+
+  background: #dff0e3;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 4px 12px rgba(0, 107, 44, 0.08);
+}
+
+
+/* Active Icon */
+
+.Navlink_set.active svg {
+  color: #ffffff;
+
+  background: #087a3b;
+}
+
+
+/* =========================================================
+   ACTIVE DARK
+========================================================= */
+
+.Navlink_set_dark.active {
+  color: #ffffff;
+
+  background: #1c3a29;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Active Dark Icon */
+
+.Navlink_set_dark.active svg {
+  color: #ffffff;
+
+  background: #087a3b;
+}
+
+
+/* =========================================================
+   ACTIVE LEFT INDICATOR
+========================================================= */
+
+.Navlink_set.active::before,
+.Navlink_set_dark.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: -16px;
+
+  top: 8px;
+
+  bottom: 8px;
+
+  width: 4px;
+
+  border-radius: 0 6px 6px 0;
+
+  background: #087a3b;
+}
+
+
+/* =========================================================
    TRACKING CARD
-========================= */
+========================================================= */
 
 .tracking-card {
-    background: linear-gradient(135deg, #d5def3, #0c6268);
-    border-radius: 18px;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    font-weight: 600;
+  background:
+    linear-gradient(
+      135deg,
+      #d5def3,
+      #0c6268
+    );
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  text-align: center;
+
+  color: white;
+
+  font-weight: 600;
 }
 
+
+/* Dark Tracking Card */
 
 .tracking-card_dark {
-    background: linear-gradient(135deg, #1b2a41, #12343b);
-    border-radius: 18px;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    font-weight: 600;
+  background:
+    linear-gradient(
+      135deg,
+      #1b2a41,
+      #12343b
+    );
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  text-align: center;
+
+  color: white;
+
+  font-weight: 600;
 }
 
 
-/* =========================
+/* =========================================================
    MAIN LOGO
-========================= */
+========================================================= */
 
 .mainlogo {
-    background-color: #374151;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
+  background-color: #374151;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  color: white;
 }
 
 
-/* =========================
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sidebar::-webkit-scrollbar,
+.sidebar_dark::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+/* Light scrollbar */
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #c9ddcc;
+
+  border-radius: 20px;
+}
+
+
+/* Dark scrollbar */
+
+.sidebar_dark::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar_dark::-webkit-scrollbar-thumb {
+  background: #374151;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
    DESKTOP
-========================= */
+========================================================= */
 
 @media (min-width: 992px) {
 
-    .sidebar,
-    .sidebar_dark {
-        width: 300px;
-        min-width: 300px;
-        max-width: 300px;
-    }
+  .sidebar,
+  .sidebar_dark {
+    width: 300px;
+
+    min-width: 300px;
+
+    max-width: 300px;
+  }
 
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
 
 @media (max-width: 991px) {
 
-    .sidebar,
-    .sidebar_dark {
-        position: relative;
+  .sidebar,
+  .sidebar_dark {
+    position: relative;
 
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
+    width: 100%;
 
-        height: auto;
-        min-height: 100vh;
-    }
+    min-width: 100%;
+
+    max-width: 100%;
+
+    height: auto;
+
+    min-height: 100vh;
+
+    padding: 18px 15px;
+  }
+
+
+  .Navlink_set,
+  .Navlink_set_dark {
+    min-height: 46px;
+
+    font-size: 15px;
+
+    padding: 8px 12px;
+  }
+
+
+  .sidebar-offcanvas {
+    width: 300px !important;
+
+    max-width: 300px !important;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+  .sidebar,
+  .sidebar_dark {
+    padding: 15px 12px;
+  }
+
+
+  .Navlink_set,
+  .Navlink_set_dark {
+    min-height: 44px;
+
+    font-size: 14px;
+
+    gap: 10px;
+  }
+
+
+  .Navlink_set svg,
+  .Navlink_set_dark svg {
+    width: 17px;
+
+    height: 17px;
+
+    padding: 6px;
+  }
 
 }
